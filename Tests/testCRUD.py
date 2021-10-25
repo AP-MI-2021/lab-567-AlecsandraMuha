@@ -6,10 +6,10 @@ def testAdaugaVanzare():
     lista = []
     lista = adaugaVanzare("1", "Harap-Alb", "Basm", 15, "None",lista)
     assert getId(getById("1",lista)) == "1"
-    assert getTitlucarte(("1",lista)) == "Harap-Alb"
-    assert getGencarte(("1",lista)) == "Basm"
-    assert getPret(("1",lista)) == 15
-    assert getTipReducere(("1",lista)) == "None"
+    assert getTitlucarte(getById("1",lista)) == "Harap-Alb"
+    assert getGencarte(getById("1",lista)) == "Basm"
+    assert getPret(getById("1",lista)) == 15
+    assert getTipReducere(getById("1",lista)) == "None"
 
 def testStergeVanzare():
     lista = []
