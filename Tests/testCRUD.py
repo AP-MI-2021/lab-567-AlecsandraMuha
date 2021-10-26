@@ -27,9 +27,9 @@ def testModificaVanzare():
     lista = adaugaVanzare("1", "Harap-Alb", "Basm", 15, "None",lista)
     lista = adaugaVanzare("2", "Ion", "Roman", 10, "None", lista)
     lista = modificaVanzare("2", "Ion", "Roman realist", 10, "Gold", lista)
-    assert len(lista) == 2
-    assert getId(getById("2", lista)) == "2"
-    assert getTitlucarte(getById("2", lista)) == "Ion"
-    assert getGencarte(getById("1", lista)) == "Roman realist"
-    assert getPret(getById("1", lista)) == 10
-    assert getTipReducere(getById("1", lista)) == "Gold"
+    vanzarenoua = getById("2",lista)
+    assert getId(vanzarenoua) == "2"
+    assert getTitlucarte(vanzarenoua) == "Ion"
+    assert getGencarte(vanzarenoua) == "Roman realist"
+    assert getPret(vanzarenoua) == 10
+    assert getTipReducere(vanzarenoua) =="Gold"

@@ -6,7 +6,7 @@ from UserInterface.console import runMenu
 def main():
     runAllTests()
     lista = []
-    lista = adaugaVanzare("1", "Harap-Alb", "Basm", 15, "None",lista)
-    lista = adaugaVanzare("2", "Ion", "Roman", 10, "None", lista)
+    lista = adaugaVanzare("1", "Harap-Alb", "Basm", 15.0, "None",lista)
+    lista = adaugaVanzare("2", "Ion", "Roman", 10.0, "None", lista)
     runMenu(lista)
 main()
