@@ -20,7 +20,7 @@ def discountptrreducere(lista):
 
             listanoua.append(vanzarenoua)
         elif getTipReducere(vanzare) == "gold":
-            cartenoua = creeazaVanzare( getId(vanzare),
+            vanzarenoua = creeazaVanzare( getId(vanzare),
             getTitlucarte(vanzare),
             getGencarte(vanzare),
             getPret(vanzare) - getPret(vanzare) * 0.1,

@@ -30,19 +30,19 @@ def stergeVanzare(id, lista):
     return [vanzare for vanzare in lista if getId(vanzare) != id]
 def modificaVanzare(id, titlucarte, gencarte, pret, tipreducere, lista):
     '''
-
-    :param id:
-    :param titlucarte:
-    :param gencarte:
-    :param pret:
-    :param tipreducere:
-    :param lista:
-    :return:
+    modifica vanzarea unei carti
+    :param id: id carte
+    :param titlucarte: titlu carte
+    :param gencarte: gen carte
+    :param pret: pret carte
+    :param tipreducere: tipul reducerii
+    :param lista: lista de vanzari
+    :return: o lista noua modificata de vanzari
     '''
     listanoua = []
-    if vanzare in lista:
+    for vanzare in lista:
         if getId(vanzare) == id:
-            vanzareNoua == creeazaVanzare(id, titlucarte, gencarte, pret, tipreducere)
+            vanzarenoua = creeazaVanzare(id, titlucarte, gencarte, pret, tipreducere)
             listanoua.append(vanzarenoua)
         else:
             listanoua.append(vanzare)

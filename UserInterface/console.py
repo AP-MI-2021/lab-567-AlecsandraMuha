@@ -25,10 +25,10 @@ def uiStergeVanzare(lista):
     return stergeVanzare(id, lista)
 def uiModificaVanzare(lista):
     id = input("Da-ti id-ul: ")
-    titlucarte = input("Dati numele cartii: ")
-    gencarte = input("Dati genul cartii: ")
-    pret = float(input("Dati pretul cartii:"))
-    tipreducere = input("Dati tipul reducerii: ")
+    titlucarte = input("Dati noul nume al cartii: ")
+    gencarte = input("Dati noul gen al cartii: ")
+    pret = float(input("Dati noul pret al cartii:"))
+    tipreducere = input("Dati noul tip de reducere: ")
     return modificaVanzare(id, titlucarte, gencarte, pret, tipreducere,lista)
 def uiDiscountVanzare(lista):
     return discountptrreducere(lista)
