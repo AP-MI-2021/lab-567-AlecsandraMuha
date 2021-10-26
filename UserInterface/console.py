@@ -1,11 +1,14 @@
-from Domain.librarie import toString
+from Domain.librarie import toString, getTitlucarte, getPret, getId, getTipReducere
 from Logic.CRUD import stergeVanzare, adaugaVanzare, modificaVanzare
+from Logic.functionalitati import discountptrreducere, modificaGenulCartii
 
 
 def printMenu():
     print("1.Adauga vanzare")
     print("2.Sterge vanzare")
     print("3.Modifica vanzare")
+    print("4.Aplica discount pentru reducerile de tip silver/gold")
+    print("5.Modifica genul pentru un titlu dat.")
     print("a.Afiseza lista de vanzari")
     print("x.Iesire")
 
@@ -27,6 +30,12 @@ def uiModificaVanzare(lista):
     pret = float(input("Dati pretul cartii:"))
     tipreducere = input("Dati tipul reducerii: ")
     return modificaVanzare(id, titlucarte, gencarte, pret, tipreducere,lista)
+def uiDiscountVanzare(lista):
+    return discountptrreducere(lista)
+def uiModificaregen(lista):
+    titlu = input("Dati titlul cartii: ")
+    gencarte= input("Dati noul gen al cartii: ")
+    return  modificaGenulCartii(gencarte,titlu,lista)
 def showAll(lista):
     for vanzare in lista:
         print(toString(vanzare))
@@ -41,6 +50,10 @@ def runMenu(lista):
             lista = uiStergeVanzare(lista)
         elif optiune == "3":
             lista = uiModificaVanzare(lista)
+        elif optiune == "4":
+            lista = uiDiscountVanzare(lista)
+        elif optiune == "5":
+            lista = uiModificaregen(lista)
         elif optiune == "a":
             showAll(lista)
         elif optiune == "x":
