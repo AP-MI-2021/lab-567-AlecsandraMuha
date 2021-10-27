@@ -1,6 +1,9 @@
+from Domain.librarie import creeazaVanzare
 from Logic.CRUD import adaugaVanzare
 from Tests.testALL import runAllTests
 from UserInterface.console import runMenu
+
+
 
 
 def main():

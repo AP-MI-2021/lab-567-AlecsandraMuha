@@ -8,8 +8,8 @@ def creeazaVanzare(id, titlucarte, gencarte, pret, tipreducere):
     :param tipreducere: string
     :return: un dictionar ce retine o vanzare a unei librarii
     '''
-    vanzare = [id, titlucarte, gencarte, pret, tipreducere]
-    return vanzare
+    lista = [id, titlucarte, gencarte, pret, tipreducere]
+    return lista
 def getId(vanzare):
     '''
     ia id-ul unei vanzari
