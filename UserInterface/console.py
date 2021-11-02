@@ -16,7 +16,7 @@ def printMenu():
 
 def uiAdaugaVanzare(lista):
     try:
-        id =(input("Da-ti id-ul: "))
+        id =int(input("Da-ti id-ul: "))
         titlucarte = input("Dati numele cartii: ")
         gencarte = input("Dati genul cartii: ")
         pret = float(input("Dati pretul cartii:"))
@@ -28,14 +28,14 @@ def uiAdaugaVanzare(lista):
 
 def uiStergeVanzare(lista):
     try:
-        id = (input("Dati id-ul unei vanzari care ar trebui sa fie stearsa: "))
+        id = int(input("Dati id-ul unei vanzari care ar trebui sa fie stearsa: "))
         return stergeVanzare(id, lista)
     except ValueError as ve:
         print("Eroare: {}".format(ve))
         return lista
 def uiModificaVanzare(lista):
     try:
-        id = (input("Da-ti id-ul: "))
+        id = int(input("Da-ti id-ul: "))
         titlucarte = input("Dati noul nume al cartii: ")
         gencarte = input("Dati noul gen al cartii: ")
         pret = float(input("Dati noul pret al cartii:"))

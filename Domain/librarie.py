@@ -1,7 +1,7 @@
 def creeazaVanzare(id, titlucarte, gencarte, pret, tipreducere):
     '''
     creeaza o vanzare dintr-o librarie
-    :param id: string
+    :param id: int
     :param titlucarte: string
     :param gencarte: string
     :param pret: float
