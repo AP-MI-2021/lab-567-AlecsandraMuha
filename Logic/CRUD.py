@@ -12,6 +12,8 @@ def adaugaVanzare(id, titlucarte, gencarte, pret, tipreducere, lista):
     :param lista: lista de vanzari de carti
     :return: lista noua, modificata
     '''
+    if getById(id, lista) is not None:
+        raise ValueError("Id-ul exista deja!")
     vanzare = creeazaVanzare(id, titlucarte, gencarte, pret, tipreducere)
     return lista + [vanzare]
 
@@ -26,7 +28,8 @@ def stergeVanzare(id, lista):
     :param lista: lista de vanzari de carti
     :return: lista noua, modificata
     '''
-
+    if getById(id, lista) is None:
+        raise ValueError("Nu exista o vanzare cu id-ul dat!")
     return [vanzare for vanzare in lista if getId(vanzare) != id]
 def modificaVanzare(id, titlucarte, gencarte, pret, tipreducere, lista):
     '''
@@ -39,6 +42,8 @@ def modificaVanzare(id, titlucarte, gencarte, pret, tipreducere, lista):
     :param lista: lista de vanzari
     :return: o lista noua modificata de vanzari
     '''
+    if getById(id, lista) is None:
+        raise ValueError("Nu exista o vanzare cu id-ul dat!")
     listanoua = []
     for vanzare in lista:
         if getId(vanzare) == id:

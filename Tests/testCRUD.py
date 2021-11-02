@@ -18,10 +18,9 @@ def testStergeVanzare():
     lista = stergeVanzare("1",lista)
     assert len(lista) == 1
     assert getById("1", lista) is None
-
-    lista = stergeVanzare("3",lista)
-    assert len(lista) == 1
     assert getById("2", lista) is not None
+
+
 def testModificaVanzare():
     lista = []
     lista = adaugaVanzare("1", "Harap-Alb", "Basm", 15, "None",lista)

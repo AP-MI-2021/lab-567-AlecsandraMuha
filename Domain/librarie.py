@@ -8,15 +8,20 @@ def creeazaVanzare(id, titlucarte, gencarte, pret, tipreducere):
     :param tipreducere: string
     :return: un dictionar ce retine o vanzare a unei librarii
     '''
-    lista = [id, titlucarte, gencarte, pret, tipreducere]
-    return lista
+    return {
+        "id": id,
+        "titlucarte": titlucarte,
+        "gencarte": gencarte,
+        "pret": pret,
+        "tipreducere": tipreducere
+    }
 def getId(vanzare):
     '''
     ia id-ul unei vanzari
     :param vanzare: dictionar de tipul vanzare
     :return: id-ul vanzarii
     '''
-    return vanzare[0]
+    return vanzare["id"]
 
 def getTitlucarte(vanzare):
     '''
@@ -24,16 +29,16 @@ def getTitlucarte(vanzare):
     :param vanzare: dictionar de tipul vanzare
     :return: titlul unei carti
     '''
-    return vanzare[1]
+    return vanzare["titlucarte"]
 
 def getGencarte(vanzare):
-    return vanzare[2]
+    return vanzare["gencarte"]
 
 def getPret(vanzare):
-    return vanzare[3]
+    return vanzare["pret"]
 
 def getTipReducere(vanzare):
-    return vanzare[4]
+    return vanzare["tipreducere"]
 def toString(vanzare):
     return "id: {}, titlu carte: {}, gen carte: {}, pret: {}, tip reducere: {}".format(
         getId(vanzare),

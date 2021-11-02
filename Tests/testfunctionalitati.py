@@ -1,6 +1,6 @@
-from Domain.librarie import getGencarte, getTipReducere, getPret
+from Domain.librarie import getGencarte, getTipReducere, getPret, getId
 from Logic.CRUD import adaugaVanzare, getById
-from Logic.functionalitati import modificaGenulCartii, discountptrreducere
+from Logic.functionalitati import modificaGenulCartii, discountptrreducere, pretminim, ordonareDupaPret
 
 
 def testdiscountptrreducere():
@@ -24,3 +24,20 @@ def testModificareGen():
     assert getGencarte(getById("1", lista)) == "Roman realist"
     assert getGencarte(getById("2", lista)) == "basm cult"
     assert getGencarte(getById("3", lista)) == "Nuvela"
+def testpretminim():
+    lista = []
+    lista = adaugaVanzare("1", "Enigma Otiliei", "Roman realist", 12, "Gold", lista)
+    lista = adaugaVanzare("2", "Harap-Alb", "basm", 15, "None", lista)
+    lista = adaugaVanzare("3", "Ion", "Roman realist", 30, "Gold", lista)
+    rezultat = pretminim(lista)
+    assert rezultat["basm"] == 15
+    assert rezultat["Roman realist"] == 12
+def testordonare():
+    lista = []
+    lista = adaugaVanzare("1", "Enigma Otiliei", "Roman realist", 12, "Gold", lista)
+    lista = adaugaVanzare("2", "Harap-Alb", "basm", 15, "None", lista)
+    lista = adaugaVanzare("3", "Ion", "Roman realist", 30, "Gold", lista)
+    rezultat = ordonareDupaPret(lista)
+    assert getId(rezultat[0]) == "1"
+    assert getId(rezultat[1]) == "2"
+    assert getId(rezultat[2]) == "3"

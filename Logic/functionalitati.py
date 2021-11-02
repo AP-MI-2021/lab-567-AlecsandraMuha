@@ -33,6 +33,7 @@ def discountptrreducere(lista):
     return listanoua
 
 def modificaGenulCartii(gencarte, titlu, lista):
+
         lnoua = []
         for vanzare in lista:
             if getTitlucarte(vanzare) == titlu:
@@ -47,3 +48,27 @@ def modificaGenulCartii(gencarte, titlu, lista):
             else:
                 lnoua.append(vanzare)
         return lnoua
+def pretminim(lista):
+    '''
+    se determina pretul minim pentru fiecare gen
+    :param lista: lista de vanzari
+    :return: pretul minim pentru fiecare gen
+    '''
+    rezultat = {}
+    for vanzare in lista:
+        gen =  getGencarte(vanzare)
+        pretm = getPret(vanzare)
+        if gen in rezultat:
+            if pretm<rezultat[gen]:
+                rezultat[gen] = pretm
+        else:
+            rezultat[gen] = pretm
+    return rezultat
+def ordonareDupaPret(lista):
+    '''
+
+    :param lista:lista de vanzari
+    :return:lista ordonata crescator dupa pret
+    '''
+    return sorted(lista, key=lambda vanzare: getPret(vanzare))
+
