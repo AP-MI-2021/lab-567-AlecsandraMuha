@@ -1,4 +1,4 @@
-from Domain.librarie import getId, creeazaVanzare
+from Domain.librarie import getId, creeazaVanzare, getPret, getTipReducere
 
 
 def adaugaVanzare(id, titlucarte, gencarte, pret, tipreducere, lista):
@@ -15,6 +15,11 @@ def adaugaVanzare(id, titlucarte, gencarte, pret, tipreducere, lista):
     if getById(id, lista) is not None:
         raise ValueError("Id-ul exista deja!")
     vanzare = creeazaVanzare(id, titlucarte, gencarte, pret, tipreducere)
+    if getPret(vanzare) < 0:
+        raise ValueError("pretul este negativ! Incorect")
+    
+
+
     return lista + [vanzare]
 
 def stergeVanzare(id, lista):

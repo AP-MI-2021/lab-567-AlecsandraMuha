@@ -20,7 +20,7 @@ def uiAdaugaVanzare(lista):
         titlucarte = input("Dati numele cartii: ")
         gencarte = input("Dati genul cartii: ")
         pret = float(input("Dati pretul cartii:"))
-        tipreducere = input("Dati tipul reducerii: ")
+        tipreducere = input("Dati tipul reducerii none/silver/gold: ")
         return adaugaVanzare(id, titlucarte, gencarte, pret, tipreducere,lista)
     except ValueError as ve:
         print("Eroare: {}".format(ve))
@@ -39,7 +39,7 @@ def uiModificaVanzare(lista):
         titlucarte = input("Dati noul nume al cartii: ")
         gencarte = input("Dati noul gen al cartii: ")
         pret = float(input("Dati noul pret al cartii:"))
-        tipreducere = input("Dati noul tip de reducere: ")
+        tipreducere = input("Dati noul tip de reducere none/silver/gold: ")
         return modificaVanzare(id, titlucarte, gencarte, pret, tipreducere,lista)
     except ValueError as ve:
         print("Eroare: {}".format(ve))

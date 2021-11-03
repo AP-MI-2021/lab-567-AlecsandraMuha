@@ -8,6 +8,7 @@ def discountptrreducere(lista):
     :param lista: lista cartilor
     :return: lista continand cartile cu modificarile cerute
     '''
+
     listanoua = []
     for vanzare in lista:
         if getTipReducere(vanzare) == "silver":
@@ -29,6 +30,7 @@ def discountptrreducere(lista):
             listanoua.append(vanzarenoua)
         else:
             listanoua.append(vanzare)
+
 
     return listanoua
 
