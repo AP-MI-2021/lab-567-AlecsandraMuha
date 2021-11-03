@@ -17,7 +17,7 @@ def adaugaVanzare(id, titlucarte, gencarte, pret, tipreducere, lista):
     vanzare = creeazaVanzare(id, titlucarte, gencarte, pret, tipreducere)
     if getPret(vanzare) < 0:
         raise ValueError("pretul este negativ! Incorect")
-    
+
 
 
     return lista + [vanzare]
