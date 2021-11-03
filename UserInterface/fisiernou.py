@@ -1,5 +1,5 @@
 from Domain.librarie import creeazaVanzare
-from Logic.CRUD import stergeVanzare, modificaVanzare
+from Logic.CRUD import stergeVanzare, modificaVanzare, adaugaVanzare
 from UserInterface.console import showAll
 
 
@@ -28,7 +28,7 @@ def comenzi(lista):
                         gencarte = comanda[3]
                         pret = float(comanda[4])
                         tipreducere= comanda[5]
-                        lista = creeazaVanzare(id, titlucarte, gencarte, pret, tipreducere)
+                        lista =  adaugaVanzare(id, titlucarte, gencarte, pret, tipreducere, lista)
                     elif comanda[0] == "delete":
                         id = int(comanda[1])
                         lista = stergeVanzare(id, lista)
@@ -46,6 +46,6 @@ def comenzi(lista):
                     elif comanda[0] == "showall":
                         showAll(lista)
                     else:
-                        print("Incorect! ")
+                        print("Incorect!")
         except ValueError as ve:
             print("Eroare: {}".format(ve))
