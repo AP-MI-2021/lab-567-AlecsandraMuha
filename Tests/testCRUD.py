@@ -13,8 +13,8 @@ def testAdaugaVanzare():
 
 def testStergeVanzare():
     lista = []
-    lista = adaugaVanzare(1, "Harap-Alb", "Basm", 15, "None",lista)
-    lista = adaugaVanzare(2, "Ion", "Roman", 10, "None", lista)
+    lista = adaugaVanzare(1, "Harap-Alb", "Basm", 15, "none",lista)
+    lista = adaugaVanzare(2, "Ion", "Roman", 10, "none", lista)
     lista = stergeVanzare(1,lista)
     assert len(lista) == 1
     assert getById(1, lista) is None
@@ -23,12 +23,12 @@ def testStergeVanzare():
 
 def testModificaVanzare():
     lista = []
-    lista = adaugaVanzare(1, "Harap-Alb", "Basm", 15, "None",lista)
-    lista = adaugaVanzare(2, "Ion", "Roman", 10, "None", lista)
-    lista = modificaVanzare(2, "Ion", "Roman realist", 10, "Gold", lista)
+    lista = adaugaVanzare(1, "Harap-Alb", "Basm", 15, "none",lista)
+    lista = adaugaVanzare(2, "Ion", "Roman", 10, "none", lista)
+    lista = modificaVanzare(2, "Ion", "Roman realist", 10, "gold", lista)
     vanzarenoua = getById(2,lista)
     assert getId(vanzarenoua) == 2
     assert getTitlucarte(vanzarenoua) == "Ion"
     assert getGencarte(vanzarenoua) == "Roman realist"
     assert getPret(vanzarenoua) == 10
-    assert getTipReducere(vanzarenoua) =="Gold"
+    assert getTipReducere(vanzarenoua) =="gold"

@@ -35,21 +35,26 @@ def discountptrreducere(lista):
     return listanoua
 
 def modificaGenulCartii(gencarte, titlu, lista):
+    '''
 
-        lnoua = []
-        for vanzare in lista:
-            if getTitlucarte(vanzare) == titlu:
+    :param gencarte: genul cartii
+    :param titlu: titlu dat
+    :param lista: lista de vanzari
+    :return:
+    '''
 
-                listanoua = creeazaVanzare(getId(vanzare),
-                                             getTitlucarte(vanzare),
-                                             gencarte,
-                                             getPret(vanzare),
-                                             getTipReducere(vanzare),
-                                             )
-                lnoua.append(listanoua)
-            else:
-                lnoua.append(vanzare)
-        return lnoua
+    lnoua = []
+    for vanzare in lista:
+        if getTitlucarte(vanzare) == titlu:
+            listanoua = creeazaVanzare(getId(vanzare),
+                        getTitlucarte(vanzare),
+                        gencarte,
+                        getPret(vanzare),
+                        getTipReducere(vanzare))
+            lnoua.append(listanoua)
+        else:
+            lnoua.append(vanzare)
+    return lnoua
 def pretminim(lista):
     '''
     se determina pretul minim pentru fiecare gen
@@ -73,4 +78,23 @@ def ordonareDupaPret(lista):
     :return:lista ordonata crescator dupa pret
     '''
     return sorted(lista, key=lambda vanzare: getPret(vanzare))
+def numar_titluri(lista):
+    '''
+    se determina nr de titluri distincte pentru un gen
+    :param lista: lista de vanzari
+    :return: nr de titluri diferite pentru fiecare gen
+    '''
+    listatitlu= []
+    list = {}
+    for vanzare in lista:
+        gen = getGencarte(vanzare)
+        titlu = getTitlucarte(vanzare)
+        if gen in list:
+            if titlu not in listatitlu:
+                listatitlu.append(titlu)
+                list[gen]=list[gen] + 1
+        else:
+            list[gen] = 1
+            listatitlu.append(titlu)
+    return list
 

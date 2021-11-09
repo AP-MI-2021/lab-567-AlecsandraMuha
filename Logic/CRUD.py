@@ -12,11 +12,13 @@ def adaugaVanzare(id, titlucarte, gencarte, pret, tipreducere, lista):
     :param lista: lista de vanzari de carti
     :return: lista noua, modificata
     '''
+    vanzare = creeazaVanzare(id, titlucarte, gencarte, pret, tipreducere)
     if getById(id, lista) is not None:
         raise ValueError("Id-ul exista deja!")
-    vanzare = creeazaVanzare(id, titlucarte, gencarte, pret, tipreducere)
     if getPret(vanzare) < 0:
-        raise ValueError("pretul este negativ! Incorect")
+        raise ValueError("pretul nu poate fi negativ! ")
+    if getTipReducere(vanzare) != "gold" and getTipReducere(vanzare) != "silver"and getTipReducere(vanzare) != "none":
+        raise ValueError("Nu exista acest tip de reducere!")
 
 
 
